@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col">
+  </div>
+  <div class="col">
+    
+    <div class="card">
+    <!-- Card image -->
+    <div class="card-header pink lighten-1 white-text">Register</div>
+      <!-- Card content -->
+      <div class="card-body">
+
+        <!-- Material form login -->
+        <form [formGroup]="rForm">
+
+          <div class="md-form">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input type="text" [(ngModel)]="user.name" id="name" formControlName="name" class="form-control" placeholder="Your name">
+          </div>
+
+          
+          <div class="btn-group text-center" data-toggle="buttons">
+        
+            <label class="btn btn-pink form-check-label">
+                <input class="form-check-input" type="radio" [(ngModel)]="user.gender" formControlName="gender" value="Male" autocomplete="off" checked> Male
+            </label>
+        
+            <label class="btn btn-pink form-check-label">
+                <input class="form-check-input" type="radio" [(ngModel)]="user.gender"  formControlName="gender" value="Female" autocomplete="off"> Female
+            </label>
+        
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input type="text" [(ngModel)]="user.phone" id="phone" formControlName="phone" class="form-control" placeholder="Phone Number">
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input type="text" [(ngModel)]="user.vehicle" id="vehicle" formControlName="vehicle" class="form-control" placeholder="Your vehicle ex: Swift Dezire">
+          </div>
+
+          <!-- Material input email -->
+          <div class="md-form">
+              <i class="fa fa-envelope prefix grey-text"></i>
+              <input type="email" [(ngModel)]="user.email" id="email" formControlName="email" class="form-control" placeholder="Your email">
+          </div>
+
+          <!-- Material input password -->
+          <div class="md-form">
+              <i class="fa fa-lock prefix grey-text"></i>
+              <input type="password" [(ngModel)]="user.password" id="password" formControlName="password" class="form-control" placeholder="Your password">
+              <!-- <label for="password">Your password</label> -->
+          </div>
+
+          <div class="text-center mt-4">
+              <button class="btn btn-pink btn-rounded" (click)="doRegister();" >Register</button>
+          </div>
+        </form>
+      <!-- Material form login -->
+    </div>
+
+  </div>
+  </div>
+  <div class="col">
+  </div>
+</div>

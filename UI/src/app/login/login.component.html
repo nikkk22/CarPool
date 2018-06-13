@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col">
+  </div>
+  <div class="col">
+    
+    <div class="card">
+    <!-- Card image -->
+    <div class="card-header pink lighten-1 white-text">Login</div>
+      <!-- Card content -->
+      <div class="card-body">
+
+        <!-- Material form login -->
+        <form [formGroup]="rForm">
+
+          <!-- Material input email -->
+          <div class="md-form">
+              <i class="fa fa-envelope prefix grey-text"></i>
+              <input type="email" [(ngModel)]="user.email" id="email" formControlName="email" class="form-control" placeholder="Your email">
+              <!-- <label for="email">Your email</label> -->
+          </div>
+
+          <!-- Material input password -->
+          <div class="md-form">
+              <i class="fa fa-lock prefix grey-text"></i>
+              <input type="password" [(ngModel)]="user.password" id="password" formControlName="password" class="form-control" placeholder="Your password">
+              <!-- <label for="password">Your password</label> -->
+          </div>
+
+          <div class="text-center mt-4">
+              <button class="btn btn-pink btn-rounded" (click)="doLogin();" >Login</button>
+          </div>
+        </form>
+      <!-- Material form login -->
+    </div>
+
+  </div>
+  </div>
+  <div class="col">
+  </div>
+</div>
