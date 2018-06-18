@@ -1,0 +1,69 @@
+<div class="row p-2">
+  <div class="col-md-8">
+    <div class="card">
+        <div class="card-header pink lighten-1 white-text">
+          <i class="fa fa-motorcycle ml-2"></i> Ride Details 
+        </div>
+        <div class="card-body">
+          <table class="table table-hover">
+              <tr>
+                <td *ngIf="ride">Vehicle Owner</td>
+                <td *ngIf="ride">{{ride.ownerName}}</td>
+              </tr>
+              <tr>
+                <td *ngIf="ride">Vehicle Number</td>
+                <td *ngIf="ride">{{ride.VNumber}}</td>
+              </tr>
+              <tr>
+                <td *ngIf="ride">Time to Leave</td>
+                <td *ngIf="ride">{{ride.time}}</td>
+              </tr>
+              <tr>
+                <td *ngIf="ride">Connectivity</td>
+                <td *ngIf="ride"><img src="../../assets/images/hangout.png" height="28px" width="28px" mdbWavesEffect></td>
+              </tr>
+          </table>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+        <div class="card-header pink lighten-1 white-text">
+          Ride Options 
+        </div>
+        <div class="card-body">
+            <a class="btn btn-blue-grey waves-light" mdbWavesEffect><i class="fa fa-bus"></i> Get a Seat</a>
+            <a class="btn btn-blue-grey waves-light" mdbWavesEffect>Message</a>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="row p-2">
+  <div class="col-md-8">
+    <div class="card">
+        <div class="card-header pink lighten-1 white-text">
+          <i class="fa fa-map ml-2"></i> Ride Map
+        </div>
+        <div class="card-body">
+          <agm-map [latitude]="lat" [longitude]="lng" *ngIf="ride">
+            <agm-direction *ngIf="dir" 
+              [origin]="dir.origin" [destination]="dir.destination">
+            </agm-direction>
+          </agm-map>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+        <div class="card-header pink lighten-1 white-text">
+          Ride Options 
+        </div>
+        <div class="card-body">
+            <a class="btn btn-blue-grey waves-light" mdbWavesEffect>Request for pickup</a>
+            <a class="btn btn-blue-grey waves-light" mdbWavesEffect>Message</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+<ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>

@@ -20,11 +20,11 @@
           
           <div class="btn-group text-center" data-toggle="buttons">
         
-            <label class="btn btn-pink form-check-label">
+            <label class="btn btn-pink form-check-label waves-light" mdbWavesEffect>
                 <input class="form-check-input" type="radio" [(ngModel)]="user.gender" formControlName="gender" value="Male" autocomplete="off" checked> Male
             </label>
         
-            <label class="btn btn-pink form-check-label">
+            <label class="btn btn-pink form-check-label waves-light" mdbWavesEffect>
                 <input class="form-check-input" type="radio" [(ngModel)]="user.gender"  formControlName="gender" value="Female" autocomplete="off"> Female
             </label>
         
@@ -40,6 +40,11 @@
             <input type="text" [(ngModel)]="user.vehicle" id="vehicle" formControlName="vehicle" class="form-control" placeholder="Your vehicle ex: Swift Dezire">
           </div>
 
+          <div class="md-form" *ngIf="user.vehicle != '' && user.vehicle !=null ">
+              <i class="fa fa-car prefix grey-text"></i>
+              <input type="text" [(ngModel)]="user.vehicleNo" id="vehicleNo" formControlName="vehicleNo" class="form-control" placeholder="ex: RJ02 4252" >
+            </div>
+
           <!-- Material input email -->
           <div class="md-form">
               <i class="fa fa-envelope prefix grey-text"></i>
@@ -54,7 +59,7 @@
           </div>
 
           <div class="text-center mt-4">
-              <button class="btn btn-pink btn-rounded" (click)="doRegister();" >Register</button>
+              <button class="btn btn-pink btn-rounded waves-light" (click)="doRegister();" mdbWavesEffect>Register</button>
           </div>
         </form>
       <!-- Material form login -->

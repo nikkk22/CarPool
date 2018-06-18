@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      
+      <div class="card">
+      <!-- Card image -->
+      <div class="card-header pink lighten-1 white-text"><i class="fa fa-gears prefix"></i> Settings</div>
+        <!-- Card content -->
+        <div class="card-body">
+  
+          <!-- Material form login -->
+          <form [formGroup]="passwordForm">
+  
+            <!-- Material input email -->
+            <div class="md-form" >
+                <i class="fa fa-lock prefix grey-text"></i>
+                <input type="password" [(ngModel)]="user.password" id="password" formControlName="password" class="form-control" placeholder="New Password">
+                <!-- <label for="email">Your email</label> -->
+            </div>
+  
+            <!-- Material input password -->
+            <div class="md-form">
+                <i class="fa fa-lock prefix grey-text"></i>
+                <input type="password" [(ngModel)]="user.cpassword" id="cpassword" formControlName="cpassword" class="form-control" placeholder="Confirm New password">
+                <!-- <label for="password">Your password</label> -->
+            </div>
+  
+            <div class="text-center mt-4">
+                <button class="btn btn-pink btn-rounded waves-light" (click)="updatePassword()" mdbWavesEffect>Update Password</button>
+            </div>
+          </form>
+        <!-- Material form login -->
+
+        <form [formGroup]="vehicleForm">
+  
+            <!-- Material input email -->
+            <div class="md-form" >
+                <i class="fa fa-car prefix grey-text"></i>
+                <input type="text" [(ngModel)]="vehicle.vehicle" id="vehicle" formControlName="vehicle" class="form-control" placeholder="Vehicle Name">
+                <!-- <label for="email">Your email</label> -->
+            </div>
+  
+            <!-- Material input password -->
+            <div class="md-form">
+                <i class="fa fa-car prefix grey-text"></i>
+                <input type="text" [(ngModel)]="vehicle.vehicleNo" id="vehicleNo" formControlName="vehicleNo" class="form-control" placeholder="Vehicle Number">
+                <!-- <label for="password">Your password</label> -->
+            </div>
+  
+            <div class="text-center mt-4">
+                <button class="btn btn-pink btn-rounded waves-light" (click)="updateVehicle()" mdbWavesEffect>Update Vehicle</button>
+            </div>
+          </form>
+      </div>
+  
+    </div>
+    </div>
+    <div class="col">
+    </div>
+  </div>

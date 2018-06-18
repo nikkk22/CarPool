@@ -1,0 +1,126 @@
+{
+  "users": [
+        {
+        "id": "1",
+        "name": "Rahul Kumar",
+        "gender": "Male",
+        "email": "rahul.ctae94@gmail.com",
+        "password": "12345",
+        "phone": "8955678101",
+        "Vehicle": "Swift Dezire",
+        "VNumber": "RJ17 3295"
+        },
+    {
+      "id": "2",
+      "name": "Ashish Kumar",
+      "gender": "Male",
+      "email": "ashish.ctae94@gmail.com",
+      "password": "12345",
+      "phone": "8955678102",
+      "Vehicle": "Alto K10",
+      "VNumber": "RJ13 3209"
+    },
+    {
+      "id": "3",
+      "name": "Vikash Kumar",
+      "gender": "Male",
+      "email": "Vikash.ctae94@gmail.com",
+      "password": "12345",
+      "phone": "8955638101",
+      "Vehicle": "Active 3G",
+      "VNumber": "RJ21 4287"
+    },
+    {
+      "id": "4",
+      "name": "Vinay Vyas",
+      "gender": "Male",
+      "email": "vinay.ctae94@gmail.com",
+      "password": "12345",
+      "phone": "8925678101",
+      "Vehicle": "Pep Plus",
+      "VNumber": "RJ02 5467"
+    },
+    {
+      "id": "5",
+      "name": "Mrityunjaya Tiwari",
+      "gender": "Male",
+      "email": "mt.tiwari@gmail.com",
+      "password": "12345",
+      "phone": "9955623101",
+      "Vehicle": "Honda City",
+      "VNumber": "RJ02 1234"
+    }
+  ],
+  "ridelist": [
+    {
+      "id": "1",
+      "ownerName": "Rahul Kumar",
+      "ownerEmail": "rahul.ctae94@gmail.com",
+      "from": "Metacube",
+      "to": "Kumbha Marg",
+      "time": "6:50 PM",
+      "sourceCordinateX": 26.791615,
+      "sourceCordinateY": 75.8256016,
+      "destCordinateX": 26.8002325,
+      "destCordinateY": 75.8217312,
+      "Vehicle": "Swift Dezire",
+      "VNumber": "RJ17 3295"
+    },
+    {
+      "id": "2",
+      "ownerName": "Vinay Vyas",
+      "ownerEmail": "vinay.ctae94@gmail.com",
+      "from": "Alwar",
+      "to": "Jaipur",
+      "time": "7:10 PM",
+      "sourceCordinateX": 27.5547764,
+      "sourceCordinateY": 76.5763354,
+      "destCordinateX": 26.8854479,
+      "destCordinateY": 75.6504719,
+      "Vehicle": "Pep Plus",
+      "VNumber": "RJ02 5467"
+    },
+    {
+      "id": "3",
+      "ownerName": "Mrityunjaya Tiwari",
+      "ownerEmail": "mt.tiwari@gmail.com",
+      "from": "Metacube",
+      "to": "Jawahar Circle",
+      "time": "4:55 PM",
+      "sourceCordinateX": 26.791615,
+      "sourceCordinateY": 75.8256016,
+      "destCordinateX": 26.8390991,
+      "destCordinateY": 75.8010832,
+      "Vehicle": "Honda City",
+      "VNumber": "RJ02 1234"
+    },
+    {
+      "id": "4",
+      "ownerName": "Mrityunjaya Tiwari",
+      "ownerEmail": "mt.tiwari@gmail.com",
+      "from": "Metacube",
+      "to": "Jawahar Circle",
+      "time": "4:55 PM",
+      "sourceCordinateX": 26.791615,
+      "sourceCordinateY": 75.8256016,
+      "destCordinateX": 26.8390991,
+      "destCordinateY": 75.8010832,
+      "Vehicle": "Honda City",
+      "VNumber": "RJ02 1234"
+    },
+    {
+      "id": "6",
+      "ownerName": "Mrityunjaya Tiwari",
+      "ownerEmail": "mt.tiwari@gmail.com",
+      "from": "Metacube",
+      "to": "Jawahar Circle",
+      "time": "4:55 PM",
+      "sourceCordinateX": 26.791615,
+      "sourceCordinateY": 75.8256016,
+      "destCordinateX": 26.8390991,
+      "destCordinateY": 75.8010832,
+      "Vehicle": "Honda City",
+      "VNumber": "RJ02 1234"
+    }
+  ]
+}

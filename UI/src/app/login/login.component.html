@@ -13,7 +13,7 @@
         <form [formGroup]="rForm">
 
           <!-- Material input email -->
-          <div class="md-form">
+          <div class="md-form" >
               <i class="fa fa-envelope prefix grey-text"></i>
               <input type="email" [(ngModel)]="user.email" id="email" formControlName="email" class="form-control" placeholder="Your email">
               <!-- <label for="email">Your email</label> -->
@@ -27,7 +27,7 @@
           </div>
 
           <div class="text-center mt-4">
-              <button class="btn btn-pink btn-rounded" (click)="doLogin();" >Login</button>
+              <button class="btn btn-pink btn-rounded waves-light" (click)="doLogin();" mdbWavesEffect>Login</button>
           </div>
         </form>
       <!-- Material form login -->

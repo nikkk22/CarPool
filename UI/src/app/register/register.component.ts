@@ -15,6 +15,9 @@ export class RegisterComponent implements OnInit {
   constructor(private router: Router, private userService: UserService,private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    if (sessionStorage.getItem('email') != null) {
+      this.router.navigate(["/dashboard"]);
+    }
     this.validate();
   }
 
@@ -33,7 +36,8 @@ export class RegisterComponent implements OnInit {
         'name': [null, Validators.compose([Validators.required])],
         'phone': [null, Validators.compose([Validators.required])],
         'vehicle': [null],
-        'gender': [null, Validators.required]
+        'gender': [null, Validators.required],
+        'vehicleNo' : [null, Validators.required]
       });
   }
 }

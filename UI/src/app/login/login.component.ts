@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserService} from '../../services/user.service';
 import { Router,NavigationEnd } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { empty } from 'rxjs/observable/empty';
+import { Session } from 'protractor';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +15,15 @@ export class LoginComponent implements OnInit {
   user : any = {};
   rForm : FormGroup;
 
-  constructor(private router: Router, private userService: UserService,private formBuilder: FormBuilder) { }
+  constructor(private router: Router, private userService: UserService,private formBuilder: FormBuilder) {
+
+   }
 
   ngOnInit() {
+    if (sessionStorage.getItem("email") != null) {
+      this.router.navigate(["/dashboard"]);
+    }
+
     this.validate();
   }
 
@@ -22,7 +31,12 @@ export class LoginComponent implements OnInit {
     console.log(this.user);
     this.userService.doLogin(this.user)
     .then(response => {
-      console.log(response);
+      if (response != "") {
+        AppComponent.isLogin = true;
+        sessionStorage.setItem("email",JSON.stringify(response[0].email).toString());
+        this.router.navigate(['/dashboard']);
+        //location.reload();
+      }
     });
   }
 
@@ -32,4 +46,5 @@ export class LoginComponent implements OnInit {
         'password': [null, Validators.required]
       });
   }
+  
 }

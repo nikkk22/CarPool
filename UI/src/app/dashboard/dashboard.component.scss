@@ -1,0 +1,55 @@
+agm-map {
+    height: 400px;
+}
+
+.cursorClass {
+    cursor: pointer;
+}
+
+p {
+    font-family: Lato;
+  }
+  .search-results {
+    height: 100%;
+  }
+  .title {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-70%);
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    width: 100%;
+  }
+  .title small {
+    color: #eaeaea;
+  }
+
+  .custom-search-input {
+      width: 100%;
+  }
+  .md-form{
+    margin: 0;
+    margin-left: 2%;
+  }
+
+  .md-form .form-control{
+    margin: 0;
+    color: white;
+  }
+
+  input::-webkit-input-placeholder {
+    color: white !important;
+    }
+     
+    input:-moz-placeholder { /* Firefox 18- */
+    color: white !important;  
+    }
+     
+    input::-moz-placeholder {  /* Firefox 19+ */
+    color: white !important;  
+    }
+     
+    input:-ms-input-placeholder {  
+    color: white !important;  
+    }
