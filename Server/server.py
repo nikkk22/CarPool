@@ -40,10 +40,15 @@ class doLogin:
         return "getLogin"
 
     def POST(self):
-        web.header('Content-Type','application/json')
+        print("In login post")
+        web.header('Access-Control-Allow-Origin','*')
+        web.header('Access-Control-Allow-Credentials','true')
+        #web.header('Content-Type','application/json')
         recordPresent = 0
         data = web.data()
+        print (data)
         reqData = json.loads(data.decode())
+        print (reqData)
         email = reqData['email']
         da = db.CPool.find({'email' : email})
         password = ""
@@ -73,6 +78,12 @@ class doLogin:
             return json_data
 
     def OPTIONS(self):
+        print("In login options")
+        web.header("Access-Control-Allow-Origin", "*")
+        web.header("Access-Control-Allow-Credentials", "true")
+        web.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT")
+        web.header("Access-Control-Allow-Headers", "Origin, Content-Type")
+        
         data = web.input()
         print (data)
         json_data = json.dumps(errorValues['successInsert'])
@@ -86,8 +97,9 @@ class doRegister:
         return "getLogin"
 
     def POST(self):
-        print ("Now inside post")
-        web.header('Content-Type','application/json')
+        web.header('Access-Control-Allow-Origin','*')
+        web.header('Access-Control-Allow-Credentials','true')
+        print ("inside register post")
         #d = {}
         #d['key'] = 'value'
         json_data = json.dumps(errorValues['failureRecPresent'])
@@ -109,9 +121,15 @@ class doRegister:
             return json_data
 
     def OPTIONS(self):
+        web.header("Access-Control-Allow-Origin", "*")
+        web.header("Access-Control-Allow-Credentials", "true")
+        web.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT")
+        web.header("Access-Control-Allow-Headers", "Origin, Content-Type")
         data = web.input()
+        json_data = json.dumps(errorValues['successInsert'])
         print (data)
-        return errorValues['successInsert']
+        #return errorValues['successInsert']
+        return json_data
 
 class index:
     def GET(self):

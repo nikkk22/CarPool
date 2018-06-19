@@ -8,8 +8,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable()
 export class UserService {
 
-    private headers = new Headers({'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*',
-                                        'Accept': 'application/json'});
+    //private headers = new Headers({'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*',
+    //                                    'Accept': 'application/json'});
+    private headers = new Headers({'Content-Type': 'application/json'});
     //private userServiceUrl = 'http://172.16.9.118:9999/';  // URL to web api
      private userServiceUrl = 'http://localhost:9999/';
     constructor(private http: Http) { }
@@ -20,10 +21,7 @@ export class UserService {
     }
 
     doLogin(user : any) : Promise<any> {
-        // user = {
-        //     "email" : "rahul@gmail.com",
-        //     "password" : "12345"
-        // }
+        //user = "{'email': 'asd', 'name': 'dasd'}";
         return this.http
         //.get(this.userServiceUrl+"users/?email="+user.email+"&password="+user.password, {headers: this.headers})
         .post(this.userServiceUrl+"login", user, {headers: this.headers})
