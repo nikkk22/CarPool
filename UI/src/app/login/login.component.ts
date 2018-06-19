@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     .then(response => {
       if (response != "") {
         AppComponent.isLogin = true;
-        sessionStorage.setItem("email",JSON.stringify(response[0].email).toString());
+        sessionStorage.setItem("email",JSON.stringify(response.email).toString());
         this.router.navigate(['/dashboard']);
         //location.reload();
       }

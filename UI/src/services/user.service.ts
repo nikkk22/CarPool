@@ -8,9 +8,10 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable()
 export class UserService {
 
-    private headers = new Headers({'Content-Type': 'application/json'});
+    private headers = new Headers({'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*',
+                                        'Accept': 'application/json'});
     //private userServiceUrl = 'http://172.16.9.118:9999/';  // URL to web api
-     private userServiceUrl = 'http://localhost:3000/';
+     private userServiceUrl = 'http://localhost:9999/';
     constructor(private http: Http) { }
 
     private handleError(error: any): Promise<any> {
@@ -24,14 +25,16 @@ export class UserService {
         //     "password" : "12345"
         // }
         return this.http
-        .get(this.userServiceUrl+"users/?email="+user.email+"&password="+user.password, {headers: this.headers})
-        //.post(this.userServiceUrl+"login", user, {headers: this.headers})
+        //.get(this.userServiceUrl+"users/?email="+user.email+"&password="+user.password, {headers: this.headers})
+        .post(this.userServiceUrl+"login", user, {headers: this.headers})
         .toPromise()
         .then(res => res.json() as any)
         .catch(this.handleError);
     }
 
     doRegister(user : any) : Promise<any> {
+        var data = {"name": "as", "gender": "Male", "phone": "asd", "vehicle": "asd", "email": "asd"};
+        
         return this.http
         .post(this.userServiceUrl+"register", user, {headers: this.headers})
         .toPromise()

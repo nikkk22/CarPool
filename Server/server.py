@@ -12,10 +12,20 @@ urls = (
 )
 
 errorValues = {}
-errorValues['successInsert'] = {'ret': True}
-errorValues['successLogin'] = {'ret': True}
-errorValues['failureRecPresent'] = {'ret': False}
-errorValues['failureLogin'] = {'ret': False}
+errorValues['successInsert'] = {'ret': 'True'}
+errorValues['successLogin'] = {'ret': 'True'}
+errorValues['failureRecPresent'] = {'ret': 'False'}
+errorValues['failureLogin'] = {'ret': 'False'}
+
+pp = {
+  "name": "adasd",
+  "gender": "Male",
+  "phone": "asd",
+  "vehicle": "asd",
+  "email": "asd",
+  "password": "asd",
+  "vehicleNo": "asd"
+}
 
 userData=()
 
@@ -30,6 +40,7 @@ class doLogin:
         return "getLogin"
 
     def POST(self):
+        web.header('Content-Type','application/json')
         recordPresent = 0
         data = web.data()
         reqData = json.loads(data.decode())
@@ -51,9 +62,22 @@ class doLogin:
             recordPresent = 0
 
         if recordPresent == 1:
-            return retData
+            json_data = json.dumps(retData)
+            print ("Data present")
+            print (json_data)
+            #return retData
+            return json_data
         else:
-            return errorValues['failureLogin']
+            json_data = json.dumps(errorValues['failureLogin'])
+            #return errorValues['failureLogin']
+            return json_data
+
+    def OPTIONS(self):
+        data = web.input()
+        print (data)
+        json_data = json.dumps(errorValues['successInsert'])
+        #return errorValues['successInsert']
+        return json_data
 
 class doRegister:
     def GET(self):
@@ -62,19 +86,32 @@ class doRegister:
         return "getLogin"
 
     def POST(self):
+        print ("Now inside post")
+        web.header('Content-Type','application/json')
+        #d = {}
+        #d['key'] = 'value'
+        json_data = json.dumps(errorValues['failureRecPresent'])
         data = web.data()
         reqData = json.loads(data.decode())
         email = reqData['email']
         da = db.CPool.find({'email' : email})
         if da.count() == 1:
             print ("Record already present with the email id " + email)
-            return errorValues['failureRecPresent']
+            #return errorValues['failureRecPresent']
+            return json_data
         else:
             del reqData['email']
             dummyData = {}
             dummyData = {'email': email, 'pInfo': reqData, 'bookedCab': [], 'offerCab': []}
             db.CPool.insert_one(dummyData)
-            return errorValues['successInsert']
+            json_data = json.dumps(errorValues['successInsert'])
+            #return errorValues['successInsert']
+            return json_data
+
+    def OPTIONS(self):
+        data = web.input()
+        print (data)
+        return errorValues['successInsert']
 
 class index:
     def GET(self):
