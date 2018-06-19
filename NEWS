@@ -3,3 +3,4 @@ Commits for Car Pool v1.0
 - Initial commit for adding the structure of the codebase.
 - Login/Logout , Registration and Settings Feature completed.
 - Component to view all available ride is created and also included the search, sort by date and refresh features.
+- Added Register code to server. It inserts data in the database.
