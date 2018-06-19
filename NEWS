@@ -4,3 +4,4 @@ Commits for Car Pool v1.0
 - Login/Logout , Registration and Settings Feature completed.
 - Component to view all available ride is created and also included the search, sort by date and refresh features.
 - Added Register code to server. It inserts data in the database.
+- Added mongodb python script to create the database.
