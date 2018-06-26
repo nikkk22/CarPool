@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   user : any = {};
   rForm : FormGroup;
-
+  isLoading : boolean = false;
   constructor(private router: Router, private userService: UserService,private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -22,10 +22,13 @@ export class RegisterComponent implements OnInit {
   }
 
   doRegister() : void {
-    console.log(this.user);
+    this.isLoading = true;
     this.userService.doRegister(this.user)
     .then(response => {
-      console.log(response);
+     // if (response)
+     console.log(response);
+      this.isLoading = false;
+      this.router.navigate(["\login"]);
     });
   }
 

@@ -10,3 +10,16 @@ agm-map {
 .fullscreen{
     height: 100%;
 }
+
+.img-custom{
+    width: 28px;
+    height: 28px;
+}
+
+.list-group .list-group-item{
+    margin-bottom: 2%;
+}
+
+.list-group .list-group-item:last-child{
+    margin-bottom: 0%;
+}

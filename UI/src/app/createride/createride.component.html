@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col">
+  </div>
+  <div class="col">
+    
+    <div class="card">
+    <!-- Card image -->
+    <div class="card-header pink lighten-1 white-text"><i class="fa fa-car"></i> Offer a Ride</div>
+      <!-- Card content -->
+      <div class="card-body">
+
+        <!-- Material form login -->
+        <form [formGroup]="rForm">
+
+          <!-- Material input email -->
+          <div class="md-form" >
+            <div class="row">
+              <div class="col-sm-1"><i class="fa fa-map-marker prefix grey-text"></i></div>
+              <div class="col-sm-11"><div class="demo"><ng4geo-autocomplete [userSettings]="userSettings" (componentCallback)="autoCompleteCallback1($event)" class="form-control"></ng4geo-autocomplete></div></div><!-- <label for="email">Your email</label> -->
+            </div>
+          </div>
+
+          <div class="md-form" >
+            <div class="row">
+              <div class="col-sm-1"><i class="fa fa-map-marker prefix grey-text"></i></div>
+              <div class="col-sm-11"><div class="demo"><ng4geo-autocomplete [userSettings]="userSettings" (componentCallback)="autoCompleteCallback1($event)" class="form-control"></ng4geo-autocomplete></div></div><!-- <label for="email">Your email</label> -->
+            </div>
+          </div>
+
+          <div class="md-form" >
+              <i class="fa fa-lock prefix grey-text"></i>
+              <input type="number" [(ngModel)]="ride.seats" id="seats" formControlName="seats" class="form-control" placeholder="Number of Seats Available" min="1">
+          </div>
+
+          <!-- Material input password -->
+          <div class="md-form">
+              <i class="fa fa-clock-o prefix grey-text"></i>
+              <input type="date" [(ngModel)]="ride.time" id="time" formControlName="time" class="form-control" placeholder="Ride Date" min="{{CurrentDate | date:'yyyy-MM-dd'}}">
+          </div>
+
+          <!-- Material input password -->
+          <div class="md-form">
+              <i class="fa fa-calendar-check-o prefix grey-text"></i>
+              <input type="time" [(ngModel)]="ride.time" id="time" formControlName="time" class="form-control" placeholder="Ride Start Time" value="{{CurrentDate | date:'HH:mm'}}" min="{{CurrentDate | date:'HH:mm'}}">
+          </div>
+
+          <div class="md-form">
+              <i class="fa fa-commenting-o prefix grey-text"></i>
+              <input type="text" [(ngModel)]="ride.comment" id="comment" formControlName="comment" class="form-control" placeholder="Comments">
+          </div>
+
+          <div class="text-center mt-4">
+              <button class="btn btn-pink btn-rounded waves-light" (click)="doLogin();" mdbWavesEffect>Login</button>
+          </div>
+        </form>
+      <!-- Material form login -->
+    </div>
+
+  </div>
+  </div>
+  <div class="col">
+    
+  </div>
+</div>
+
+<!-- <ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete><label for="email">Your email</label> -->
+         

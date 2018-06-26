@@ -16,18 +16,18 @@
         <li class="nav-item" *ngIf="!getDetails()">
           <button type="button" class="btn btn-mdb-color btn-sm btn-rounded waves-light" routerLink="/login" mdbWavesEffect>Login <i class="fa fa-sign-in ml-2"></i></button>
         </li>
-        <!-- <li class="nav-item" *ngIf="getDetails()">
-          <button type="button" class="btn btn-mdb-color btn-sm btn-rounded waves-light" routerLink="/request" mdbWavesEffect>request a ride<i class="fa fa-paw ml-2"></i></button>
-        </li> -->
         <li class="nav-item" *ngIf="getDetails()">
-          <button type="button" class="btn btn-mdb-color btn-sm btn-rounded waves-light" routerLink="/offer" mdbWavesEffect>Offer a ride <i class="fa fa-paper-plane ml-2 animated slideInUp"></i></button>
+          <button type="button" class="btn btn-mdb-color btn-sm btn-rounded waves-light" routerLink="/offeredRides" mdbWavesEffect>Offered Rides<i class="fa fa-paw ml-2"></i></button>
+        </li>
+        <li class="nav-item" *ngIf="getDetails()">
+          <button type="button" class="btn btn-mdb-color btn-sm btn-rounded waves-light" routerLink="/createride" mdbWavesEffect>Offer a ride <i class="fa fa-paper-plane ml-2 animated slideInUp"></i></button>
         </li>
         <div class="btn-group btn-sm" dropdown *ngIf="getDetails()">
             <button dropdownToggle class="btn btn-mdb-color btn-sm btn-rounded dropdown-toggle waves-light" type="button" mdbWavesEffect>
                  Rahul Kumar
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#"><i class="fa fa-history ml-2"></i> History</a>
+                <a class="dropdown-item" routerLink="/history"><i class="fa fa-history ml-2"></i> History</a>
                 <!-- <a class="dropdown-item" href="#">Another action</a> -->
                 <a class="dropdown-item" routerLink="/settings"><i class="fa fa-gears ml-2"></i> Settings</a>
                 <div class="dropdown-divider"></div>

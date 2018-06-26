@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { UserService} from '../services/user.service';
+import { RideService} from '../services/ride.service';
 import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -14,12 +15,15 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AgmCoreModule } from '@agm/core';      
 import { AgmDirectionModule } from 'agm-direction';
-import { ViewrideComponent } from './viewride/viewride.component'; 
+import { ViewrideComponent } from './viewride/viewride.component';
 import { MapGeoCodeService } from '../services/map.geocode.service';
 import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
 import { SettingsComponent } from './settings/settings.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import { CreaterideComponent } from './createride/createride.component';
+import { OfferedRidesComponent } from './offered-rides/offered-rides.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
     RegisterComponent,
     DashboardComponent,
     ViewrideComponent,
-    SettingsComponent
+    SettingsComponent,
+    CreaterideComponent,
+    OfferedRidesComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,7 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
     Ng2SearchPipeModule,
     Ng2OrderModule
   ],
-  providers: [UserService,MapGeoCodeService],
+  providers: [UserService,MapGeoCodeService,RideService],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

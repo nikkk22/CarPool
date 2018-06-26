@@ -59,7 +59,7 @@
           </div>
 
           <div class="text-center mt-4">
-              <button class="btn btn-pink btn-rounded waves-light" (click)="doRegister();" mdbWavesEffect>Register</button>
+              <button class="btn btn-pink btn-rounded waves-light" (click)="doRegister();" mdbWavesEffect>Register <i class="fa fa-refresh animated rotateIn infinite" *ngIf="isLoading"></i></button>
           </div>
         </form>
       <!-- Material form login -->

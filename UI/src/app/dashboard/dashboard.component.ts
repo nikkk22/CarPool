@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService} from '../../services/user.service';
 import { Router,NavigationEnd } from '@angular/router';
+import { RideService} from '../../services/ride.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,7 +20,7 @@ export class DashboardComponent implements OnInit{
   surveyFilter: any = {surveyName : '', id : ''};
   showOrderIcon : boolean = false;
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router, private userService: UserService, private rideService: RideService) { }
   
   ngOnInit() {
     if (sessionStorage.getItem("email") == null) {
@@ -37,7 +38,7 @@ export class DashboardComponent implements OnInit{
   }
 
   getRideList() : void {
-    this.userService.getRideList()
+    this.rideService.getRideList()
     .then(response => {
       this.rideList = response;
     });

@@ -1,6 +1,6 @@
 <div class="row p-2">
-  <div class="col-3"></div>
-  <div class="col-6">
+  <div class="col-2"></div>
+  <div class="col-8">
     <div class="card">
       <h3 class="card-header pink white-text"><i class="fa fa-automobile prefix"></i> Available Rides <div class="md-form float-right"><input type="text" [(ngModel)]="name" id="search"  class="form-control custom-search-input" placeholder="Search anything"></div> <i class="fa fa-refresh float-right cursorClass animated rotateIn" (click)="getRideList()"></i></h3>
       <div class="card-body">
@@ -11,6 +11,7 @@
                     <th>Vehicle Owner</th>
                     <th>From</th>
                     <th>To</th>
+                    <th>Ride Date</th>
                     <th [class]="order === 'time'" class="cursorClass"
                     (click)="setOrder('time')">Arrival Time<span class="cursorClass" [hidden]="reverse">▼</span><span class="cursorClass" [hidden]="!reverse">▲</span></th>
                     <th>Action</th>
@@ -21,6 +22,7 @@
                       <td>{{ride.ownerName}}</td>
                       <td>{{ride.from}}</td>
                       <td>{{ride.to}}</td>
+                      <td>{{ride.date}}</td>
                       <td>{{ride.time}}</td>
                       <td><button class="btn btn-mdb-color btn-sm btn-rounded waves-light animated flipInX" routerLink="/viewride/{{ride.id}}">Book</button></td>
                   </tr>
@@ -30,6 +32,6 @@
       </div>
     </div>
   </div>
-  <div class="col-3">
+  <div class="col-2">
   </div>
 </div>

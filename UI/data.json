@@ -1,15 +1,15 @@
 {
   "users": [
-        {
-        "id": "1",
-        "name": "Rahul Kumar",
-        "gender": "Male",
-        "email": "rahul.ctae94@gmail.com",
-        "password": "12345",
-        "phone": "8955678101",
-        "Vehicle": "Swift Dezire",
-        "VNumber": "RJ17 3295"
-        },
+    {
+      "id": "1",
+      "name": "Rahul Kumar",
+      "gender": "Male",
+      "email": "rahul.ctae94@gmail.com",
+      "password": "12345",
+      "phone": "8955678101",
+      "Vehicle": "Swift Dezire",
+      "VNumber": "RJ17 3295"
+    },
     {
       "id": "2",
       "name": "Ashish Kumar",
@@ -49,6 +49,11 @@
       "phone": "9955623101",
       "Vehicle": "Honda City",
       "VNumber": "RJ02 1234"
+    },
+    {
+      "email": "rahul.ctae94@gmail.com",
+      "password": "12345",
+      "id": "6k5y4sL"
     }
   ],
   "ridelist": [
@@ -59,12 +64,14 @@
       "from": "Metacube",
       "to": "Kumbha Marg",
       "time": "6:50 PM",
+      "date" : "12-06-2018",
       "sourceCordinateX": 26.791615,
       "sourceCordinateY": 75.8256016,
       "destCordinateX": 26.8002325,
       "destCordinateY": 75.8217312,
       "Vehicle": "Swift Dezire",
-      "VNumber": "RJ17 3295"
+      "VNumber": "RJ17 3295",
+      "Seats": 5
     },
     {
       "id": "2",
@@ -73,12 +80,14 @@
       "from": "Alwar",
       "to": "Jaipur",
       "time": "7:10 PM",
+      "date" : "12-07-2018",
       "sourceCordinateX": 27.5547764,
       "sourceCordinateY": 76.5763354,
       "destCordinateX": 26.8854479,
       "destCordinateY": 75.6504719,
       "Vehicle": "Pep Plus",
-      "VNumber": "RJ02 5467"
+      "VNumber": "RJ02 5467",
+      "Seats": 1
     },
     {
       "id": "3",
@@ -87,12 +96,14 @@
       "from": "Metacube",
       "to": "Jawahar Circle",
       "time": "4:55 PM",
+      "date" : "12-08-2018",
       "sourceCordinateX": 26.791615,
       "sourceCordinateY": 75.8256016,
       "destCordinateX": 26.8390991,
       "destCordinateY": 75.8010832,
       "Vehicle": "Honda City",
-      "VNumber": "RJ02 1234"
+      "VNumber": "RJ02 1234",
+      "Seats": 0
     },
     {
       "id": "4",
@@ -101,12 +112,14 @@
       "from": "Metacube",
       "to": "Jawahar Circle",
       "time": "4:55 PM",
+      "date" : "12-09-2018",
       "sourceCordinateX": 26.791615,
       "sourceCordinateY": 75.8256016,
       "destCordinateX": 26.8390991,
       "destCordinateY": 75.8010832,
       "Vehicle": "Honda City",
-      "VNumber": "RJ02 1234"
+      "VNumber": "RJ02 1234",
+      "Seats": 4
     },
     {
       "id": "6",
@@ -115,12 +128,108 @@
       "from": "Metacube",
       "to": "Jawahar Circle",
       "time": "4:55 PM",
+      "date" : "12-10-2018",
       "sourceCordinateX": 26.791615,
       "sourceCordinateY": 75.8256016,
       "destCordinateX": 26.8390991,
       "destCordinateY": 75.8010832,
       "Vehicle": "Honda City",
-      "VNumber": "RJ02 1234"
+      "VNumber": "RJ02 1234",
+      "Seats": 2
+    }
+  ],
+  "offeredRidelist": [
+    {
+      "id": "1",
+      "ownerName": "Rahul Kumar",
+      "ownerEmail": "rahul.ctae94@gmail.com",
+      "from": "Metacube",
+      "to": "Kumbha Marg",
+      "time": "6:50 PM",
+      "date" : "12-06-2018",
+      "sourceCordinateX": 26.791615,
+      "sourceCordinateY": 75.8256016,
+      "destCordinateX": 26.8002325,
+      "destCordinateY": 75.8217312,
+      "Vehicle": "Swift Dezire",
+      "VNumber": "RJ17 3295",
+      "Seats": 5
+    },
+    {
+      "id": "2",
+      "ownerName": "Vinay Vyas",
+      "ownerEmail": "vinay.ctae94@gmail.com",
+      "from": "Alwar",
+      "to": "Jaipur",
+      "time": "7:10 PM",
+      "date" : "12-07-2018",
+      "sourceCordinateX": 27.5547764,
+      "sourceCordinateY": 76.5763354,
+      "destCordinateX": 26.8854479,
+      "destCordinateY": 75.6504719,
+      "Vehicle": "Pep Plus",
+      "VNumber": "RJ02 5467",
+      "Seats": 1
+    },
+    {
+      "id": "3",
+      "ownerName": "Mrityunjaya Tiwari",
+      "ownerEmail": "mt.tiwari@gmail.com",
+      "from": "Metacube",
+      "to": "Jawahar Circle",
+      "time": "4:55 PM",
+      "date" : "12-08-2018",
+      "sourceCordinateX": 26.791615,
+      "sourceCordinateY": 75.8256016,
+      "destCordinateX": 26.8390991,
+      "destCordinateY": 75.8010832,
+      "Vehicle": "Honda City",
+      "VNumber": "RJ02 1234",
+      "Seats": 0
+    },
+    {
+      "id": "4",
+      "ownerName": "Mrityunjaya Tiwari",
+      "ownerEmail": "mt.tiwari@gmail.com",
+      "from": "Metacube",
+      "to": "Jawahar Circle",
+      "time": "4:55 PM",
+      "date" : "12-09-2018",
+      "sourceCordinateX": 26.791615,
+      "sourceCordinateY": 75.8256016,
+      "destCordinateX": 26.8390991,
+      "destCordinateY": 75.8010832,
+      "Vehicle": "Honda City",
+      "VNumber": "RJ02 1234",
+      "Seats": 4
+    },
+    {
+      "id": "6",
+      "ownerName": "Mrityunjaya Tiwari",
+      "ownerEmail": "mt.tiwari@gmail.com",
+      "from": "Metacube",
+      "to": "Jawahar Circle",
+      "time": "4:55 PM",
+      "date" : "12-10-2018",
+      "sourceCordinateX": 26.791615,
+      "sourceCordinateY": 75.8256016,
+      "destCordinateX": 26.8390991,
+      "destCordinateY": 75.8010832,
+      "Vehicle": "Honda City",
+      "VNumber": "RJ02 1234",
+      "Seats": 2
+    }
+  ],
+  "riderslist" : [
+    {
+      "rideId" : 1 ,
+      "riderName" : "Rahul Kumar",
+      "riderEmail" : "Rahul.ctae94@gmail.com"
+    },
+    {
+      "rideId" : 1,
+      "riderName" : "Mrityunjaya Tiwari",
+      "riderEmail" : "mt.tiwari@gmail.com"
     }
   ]
 }

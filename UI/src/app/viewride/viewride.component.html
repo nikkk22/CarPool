@@ -27,14 +27,36 @@
     </div>
   </div>
   <div class="col-md-4">
-    <div class="card">
+    <div class="card" *ngIf=" ride && (rideOwnerEmail != userEmail)" (click)="printThis()">
         <div class="card-header pink lighten-1 white-text">
           Ride Options 
         </div>
         <div class="card-body">
-            <a class="btn btn-blue-grey waves-light" mdbWavesEffect><i class="fa fa-bus"></i> Get a Seat</a>
+            <a class="btn btn-blue-grey waves-light" [ngClass]="{'disabled' : !isSeatAvailable}"  mdbWavesEffect (click)="bookRide();"><i class="fa fa-bus"></i> Get a Seat <i class="fa fa-refresh animated rotateIn infinite" *ngIf="isLoading"></i></a>
             <a class="btn btn-blue-grey waves-light" mdbWavesEffect>Message</a>
         </div>
+        <!-- [ngClass]="{'disabled' : setsAvailable() == 0}" -->
+    </div>
+    <div class="card" *ngIf=" ride && (rideOwnerEmail == userEmail)">
+        <div class="card-header pink lighten-1 white-text">
+          These are riding with you 
+        </div>
+        <div class="card-body">
+            <!-- Rider List Starts Here -->
+            <div class="list-group">
+                <a *ngFor="let rider of ridersList" href="mailto:{{rider.riderEmail}}" target="_B=blank" class="list-group-item list-group-item-action flex-column align-items-start animated flipInX">
+                  <div class="row"> 
+                    <div class="col-md-6"><img src="../../assets/images/user.png" class="img-custom"/>{{rider.riderName}}</div>
+                    <div class="col-md-6"><div class="float-right">{{rider.riderEmail}}</div></div>
+                  </div>
+                </a>
+                <div *ngIf="ridersList && ridersList.length  == 0" >
+                  <center>Currently no rider is sharing your way.</center>
+                </div>
+              </div>
+            <!-- Rider List Ends Here  -->
+        </div>
+        <!-- [ngClass]="{'disabled' : setsAvailable() == 0}" -->
     </div>
   </div>
 </div>
@@ -65,5 +87,6 @@
     </div>
   </div>
 </div>
-
-<ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
+<!-- 
+<ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete><!-- <label for="email">Your email</label> -->
+          -->
